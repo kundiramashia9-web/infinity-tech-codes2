@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Infinity Tech | Enquiry - Get Your Quote</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ============================================ */
+        /* ATTRACTIVE & MODERN LAYOUT - PRESERVES ORIGINAL COLOR SCHEME */
+        /* ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+        }
+        
+        /* Hero section redesign */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="%2338bdf8" fill-opacity="0.05" d="M100 0L200 200H0L100 0z"/></svg>') repeat;
+            opacity: 0.1;
+        }
+        
+        .hero .section-header h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .section-header p {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+        }
+        
+        /* Main enquiry container - fresh design */
+        .enquiry-wrapper {
+            max-width: 1400px;
+            margin: -40px auto 60px;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .enquiry-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 992px) {
+            .enquiry-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        /* Info Panel - Attractive Sidebar */
+        .info-panel {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        .info-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .info-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .info-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .info-panel h3 {
+            font-size: 1.8rem;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-panel > p {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-3px);
+            background: #f1f5f9;
+        }
+        
+        .feature-item i {
+            font-size: 1.8rem;
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .feature-item span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .quick-info {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border-radius: 20px;
+            padding: 1.5rem;
+            color: white;
+            margin-top: 1.5rem;
+        }
+        
+        .quick-info h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .quick-info p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #cbd5e1;
+        }
+        
+        .quick-info .phone-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #38bdf8;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* Form Panel - Modern Design */
+        .form-panel {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .form-header h2 {
+            color: #0f172a;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-header p {
+            color: #64748b;
+        }
+        
+        /* Form Groups - Modern */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group-modern {
+            margin-bottom: 1.25rem;
+        }
+        
+        .form-group-modern label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+            font-size: 0.9rem;
+        }
+        
+        .form-group-modern label i {
+            color: #38bdf8;
+            margin-right: 0.3rem;
+        }
+        
+        .form-group-modern input,
+        .form-group-modern select,
+        .form-group-modern textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            background: #fefefe;
+            font-family: inherit;
+        }
+        
+        .form-group-modern input:focus,
+        .form-group-modern select:focus,
+        .form-group-modern textarea:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+        }
+        
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        /* Submit Button */
+        .submit-btn-modern {
+            width: 100%;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .submit-btn-modern:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+        }
+        
+        .submit-btn-modern:active {
+            transform: translateY(0);
+        }
+        
+        .submit-btn-modern.submitting {
+            opacity: 0.7;
+            cursor: wait;
+        }
+        
+        /* Success Modal - Shows "Message Sent" */
+        .success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .success-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .success-card-modern {
+            background: white;
+            max-width: 450px;
+            width: 90%;
+            padding: 3rem 2rem;
+            border-radius: 40px;
+            text-align: center;
+            transform: scale(0.8);
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .success-modal.active .success-card-modern {
+            transform: scale(1);
+        }
+        
+        .success-card-modern i {
+            font-size: 5rem;
+            color: #10b981;
+            margin-bottom: 1rem;
+        }
+        
+        .success-card-modern h3 {
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .success-card-modern p {
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .success-card-modern button {
+            background: #0f172a;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .success-card-modern button:hover {
+            background: #1e293b;
+            transform: scale(1.02);
+        }
+        
+        /* Footer stays original */
+        footer {
+            margin-top: 0;
+        }
+        
+        /* Floating notification for validation */
+        .floating-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #0f172a;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            z-index: 10001;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+            white-space: nowrap;
+            border-left: 4px solid #38bdf8;
+        }
+        
+        .floating-notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        @media (max-width: 600px) {
+            .floating-notification {
+                white-space: normal;
+                font-size: 0.8rem;
+                max-width: 85%;
+                text-align: center;
+            }
+        }
+        
+        .required-star {
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-microchip"></i>
+                        <span>Infinity Tech</span>
+                    </a>
+                </div>
+                <input type="checkbox" id="mobile-toggle" class="mobile-toggle" style="display: none;">
+                <label for="mobile-toggle" class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="padding: 80px 0 60px;">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Start Your Project</h1>
+                    <p>Tell us about your vision — we'll turn it into reality</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="enquiry-wrapper">
+            <div class="enquiry-grid">
+                <!-- Left Panel - Attractive Info -->
+                <div class="info-panel">
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Why Infinity Tech?</h3>
+                        <p>Trusted by 500+ businesses across Africa</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-smile"></i>
+                            <span>100% Satisfaction</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tags"></i>
+                            <span>Fixed Pricing</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Agile Process</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Delivery</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>Industry Awards</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-info">
+                        <h4><i class="fas fa-clock"></i> Express Response</h4>
+                        <p>Fill out the form and get a free consultation within <strong>24 hours</strong>. Urgent needs? Call us directly:</p>
+                        <div class="phone-number">
+                            <i class="fas fa-phone-alt"></i> +27 (0) 12 345 6789
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: #64748b;">
+                        <i class="fas fa-lock"></i> Your data is safe with us
+                    </div>
+                </div>
+                
+                <!-- Right Panel - Modern Enquiry Form -->
+                <div class="form-panel">
+                    <div class="form-header">
+                        <h2>Request a Quote</h2>
+                        <p>Fill in the details below and we'll get back to you within 24 hours</p>
+                    </div>
+                    
+                    <form id="enquiryForm" method="post">
+                        <div class="form-row">
+                            <div class="form-group-modern">
+                                <label><i class="fas fa-user"></i> Full Name <span class="required-star">*</span></label>
+                                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group-modern">
+                                <label><i class="fas fa-envelope"></i> Email <span class="required-star">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group-modern">
+                                <label><i class="fas fa-phone"></i> Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+27 XX XXX XXXX">
+                            </div>
+                            <div class="form-group-modern">
+                                <label><i class="fas fa-building"></i> Company Name</label>
+                                <input type="text" id="company" name="company" placeholder="Your Company">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group-modern">
+                                <label><i class="fas fa-cogs"></i> Service Required <span class="required-star">*</span></label>
+                                <select id="serviceType" name="serviceType" required>
+                                    <option value="">Select a service</option>
+                                    <option value="web-development">🌐 Web Development</option>
+                                    <option value="app-development">📱 App Development</option>
+                                    <option value="it-support">🖥️ IT Support</option>
+                                    <option value="digital-consulting">📊 Digital Consulting</option>
+                                    <option value="custom-solution">⚡ Custom Solution</option>
+                                </select>
+                            </div>
+                            <div class="form-group-modern">
+                                <label><i class="fas fa-coins"></i> Estimated Budget</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget range</option>
+                                    <option value="under-1000">Under R10,000</option>
+                                    <option value="1000-5000">R10,000 - R50,000</option>
+                                    <option value="5000-10000">R50,000 - R100,000</option>
+                                    <option value="10000-25000">R100,000 - R250,000</option>
+                                    <option value="25000+">R250,000+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group-modern">
+                                <label><i class="fas fa-calendar-alt"></i> Expected Timeline</label>
+                                <select id="timeline" name="timeline">
+                                    <option value="">Select timeline</option>
+                                    <option value="asap">ASAP (Less than 2 weeks)</option>
+                                    <option value="1month">1 Month</option>
+                                    <option value="2-3months">2-3 Months</option>
+                                    <option value="3-6months">3-6 Months</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+                            <div class="form-group-modern">
+                                <label><i class="fas fa-info-circle"></i> How did you hear about us?</label>
+                                <select id="source" name="source">
+                                    <option value="">Select option</option>
+                                    <option value="google">Google Search</option>
+                                    <option value="social">Social Media</option>
+                                    <option value="referral">Referral</option>
+                                    <option value="advertisement">Advertisement</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-modern">
+                            <label><i class="fas fa-file-alt"></i> Project Details <span class="required-star">*</span></label>
+                            <textarea id="projectDetails" name="projectDetails" rows="5" placeholder="Please describe your project, goals, features you need, and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn-modern" id="submitBtn">
+                            <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+                        </button>
+                        
+                        <p style="font-size: 0.75rem; text-align: center; margin-top: 1rem; color: #94a3b8;">
+                            <i class="fas fa-check-circle"></i> Free consultation • No obligation • Fast response
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-microchip"></i>
+                        <span>Infinity Tech</span>
+                    </div>
+                    <p>Empowering businesses with innovative tech solutions since 2024.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="enquiry.html">Enquiry</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@infinitytech.co.za</li>
+                        <li><i class="fas fa-phone"></i> +27 (0) 12 345 6789</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Pretoria, SA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Infinity Tech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Success Modal - Shows "Message Sent" -->
+    <div id="successModal" class="success-modal">
+        <div class="success-card-modern">
+            <i class="fas fa-check-circle"></i>
+            <h3>Message Sent! 🎉</h3>
+            <p>Thank you for reaching out to Infinity Tech! Our team will review your request and contact you within 24 hours with a tailored solution.</p>
+            <button id="closeModalBtn">Continue Exploring</button>
+        </div>
+    </div>
+    
+    <div id="floatingNotif" class="floating-notification"></div>
+    
+    <script src="js_assets/script.js"></script>
+    <script>
+        (function() {
+            // Get form elements
+            const form = document.getElementById('enquiryForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successModal = document.getElementById('successModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const floatingNotif = document.getElementById('floatingNotif');
+            
+            function showNotification(msg, isError = false) {
+                if (!floatingNotif) return;
+                floatingNotif.textContent = msg;
+                floatingNotif.style.background = isError ? '#991b1b' : '#0f172a';
+                floatingNotif.style.borderLeftColor = isError ? '#ef4444' : '#38bdf8';
+                floatingNotif.classList.add('show');
+                setTimeout(() => {
+                    floatingNotif.classList.remove('show');
+                }, 2500);
+            }
+            
+            // Function to reset/clear ALL form fields
+            function resetFormFields() {
+                const inputs = form.querySelectorAll('input, select, textarea');
+                inputs.forEach(input => {
+                    if (input.type !== 'submit' && input.type !== 'button') {
+                        if (input.tagName === 'SELECT') {
+                            input.selectedIndex = 0;
+                        } else {
+                            input.value = '';
+                        }
+                    }
+                });
+                // Also use native reset as backup
+                form.reset();
+            }
+            
+            // Show success modal with "Message Sent"
+            function showSuccessModal() {
+                if (successModal) {
+                    successModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+            
+            function hideSuccessModal() {
+                if (successModal) {
+                    successModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            // Form submission handler
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get values for validation
+                const fullName = document.getElementById('fullName')?.value.trim();
+                const email = document.getElementById('email')?.value.trim();
+                const serviceType = document.getElementById('serviceType')?.value;
+                const projectDetails = document.getElementById('projectDetails')?.value.trim();
+                
+                // Validation
+                if (!fullName) {
+                    showNotification('❌ Please enter your full name', true);
+                    document.getElementById('fullName')?.focus();
+                    return;
+                }
+                
+                if (!email) {
+                    showNotification('❌ Please enter your email address', true);
+                    document.getElementById('email')?.focus();
+                    return;
+                }
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showNotification('❌ Please enter a valid email address', true);
+                    document.getElementById('email')?.focus();
+                    return;
+                }
+                
+                if (!serviceType) {
+                    showNotification('❌ Please select a service type', true);
+                    document.getElementById('serviceType')?.focus();
+                    return;
+                }
+                
+                if (!projectDetails) {
+                    showNotification('❌ Please describe your project details', true);
+                    document.getElementById('projectDetails')?.focus();
+                    return;
+                }
+                
+                // Show submitting state
+                submitBtn.classList.add('submitting');
+                const originalHTML = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-pulse"></i>';
+                submitBtn.disabled = true;
+                
+                // Simulate sending (like API call)
+                setTimeout(() => {
+                    // Log to console for demo
+                    console.log('Enquiry submitted:', {
+                        fullName, email,
+                        phone: document.getElementById('phone')?.value,
+                        company: document.getElementById('company')?.value,
+                        serviceType,
+                        budget: document.getElementById('budget')?.value,
+                        timeline: document.getElementById('timeline')?.value,
+                        source: document.getElementById('source')?.value,
+                        projectDetails
+                    });
+                    
+                    // IMPORTANT: Clear/erase everything the user wrote
+                    resetFormFields();
+                    
+                    // Show success modal with "Message Sent"
+                    showSuccessModal();
+                    
+                    // Reset button state
+                    submitBtn.classList.remove('submitting');
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.disabled = false;
+                    
+                    // Smooth scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
+                }, 800);
+            });
+            
+            // Close modal handler
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function() {
+                    hideSuccessModal();
+                    showNotification('✨ Message sent! We\'ll contact you soon.', false);
+                });
+            }
+            
+            // Click outside modal to close
+            if (successModal) {
+                successModal.addEventListener('click', function(e) {
+                    if (e.target === successModal) {
+                        hideSuccessModal();
+                        showNotification('📋 Your message has been received!', false);
+                    }
+                });
+            }
+            
+            // ============================================
+            // SOCIAL LINKS FUNCTIONALITY
+            // ============================================
+            const socialUrls = {
+                facebook: 'https://www.facebook.com/InfinityTechSouthAfrica',
+                twitter: 'https://twitter.com/InfinityTech_SA', 
+                linkedin: 'https://www.linkedin.com/company/infinity-tech-solutions',
+                tiktok: 'https://www.tiktok.com/@infinitytech.official',
+                instagram: 'https://www.instagram.com/infinitytech.sa/'
+            };
+            
+            const fallbackUrls = {
+                facebook: 'https://www.facebook.com/',
+                twitter: 'https://twitter.com/',
+                linkedin: 'https://www.linkedin.com/',
+                tiktok: 'https://www.tiktok.com/',
+                instagram: 'https://www.instagram.com/'
+            };
+            
+            const socialLinks = document.querySelectorAll('.social-links a');
+            socialLinks.forEach(link => {
+                const icon = link.querySelector('i');
+                if (!icon) return;
+                let platform = null;
+                const classes = icon.className;
+                if (classes.includes('fa-facebook')) platform = 'facebook';
+                else if (classes.includes('fa-twitter')) platform = 'twitter';
+                else if (classes.includes('fa-linkedin')) platform = 'linkedin';
+                else if (classes.includes('fa-tiktok')) platform = 'tiktok';
+                else if (classes.includes('fa-instagram')) platform = 'instagram';
+                
+                if (platform) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const url = socialUrls[platform] || fallbackUrls[platform];
+                        if (url) {
+                            window.open(url, '_blank', 'noopener,noreferrer');
+                            showNotification(`🔗 Opening ${platform} page`, false);
+                        }
+                    });
+                }
+            });
+            
+            console.log('Enquiry page: "Message Sent" modal appears, form clears completely on submit!');
+        })();
+    </script>
+</body>
+</html>
